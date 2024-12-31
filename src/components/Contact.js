@@ -4,44 +4,12 @@ import contactImg from "../assets/img/contact-img.svg";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
+
 export const Contact = () => {
-  const formInitialDetails = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    message: ''
-  }
-  const [formDetails, setFormDetails] = useState(formInitialDetails);
-  const [buttonText, setButtonText] = useState('Send');
-  const [status, setStatus] = useState({});
-
-  const onFormUpdate = (category, value) => {
-      setFormDetails({
-        ...formDetails,
-        [category]: value
-      })
-  }
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setButtonText("Sending...");
-    let response = await fetch("http://localhost:5000/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(formDetails),
-    });
-    setButtonText("Send");
-    let result = await response.json();
-    setFormDetails(formInitialDetails);
-    if (result.code == 200) {
-      setStatus({ succes: true, message: 'Message sent successfully'});
-    } else {
-      setStatus({ succes: false, message: 'Something went wrong, please try again later.'});
-    }
-  };
+  
+  
+  
+  
 
   return (
     <section className="contact" id="connect">
@@ -59,32 +27,35 @@ export const Contact = () => {
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                 <h2>Get In Touch</h2>
-                <form onSubmit={handleSubmit}>
+                
                   <Row>
-                    <Col size={12} sm={6} className="px-1">
-                      <input type="text" value={formDetails.firstName} placeholder="First Name" onChange={(e) => onFormUpdate('firstName', e.target.value)} />
-                    </Col>
-                    <Col size={12} sm={6} className="px-1">
-                      <input type="text" value={formDetails.lasttName} placeholder="Last Name" onChange={(e) => onFormUpdate('lastName', e.target.value)}/>
-                    </Col>
-                    <Col size={12} sm={6} className="px-1">
-                      <input type="email" value={formDetails.email} placeholder="Email Address" onChange={(e) => onFormUpdate('email', e.target.value)} />
-                    </Col>
-                    <Col size={12} sm={6} className="px-1">
-                      <input type="tel" value={formDetails.phone} placeholder="Phone No." onChange={(e) => onFormUpdate('phone', e.target.value)}/>
-                    </Col>
-                    <Col size={12} className="px-1">
-                      <textarea rows="6" value={formDetails.message} placeholder="Message" onChange={(e) => onFormUpdate('message', e.target.value)}></textarea>
-                      <button type="submit"><span>{buttonText}</span></button>
-                    </Col>
-                    {
-                      status.message &&
-                      <Col>
-                        <p className={status.success === false ? "danger" : "success"}>{status.message}</p>
-                      </Col>
-                    }
+                  <Col size={12} sm={6} className="px-1">
+                    <div>First Name: <strong>Prabuddha</strong></div>
+                  </Col>
+                  <Col size={12} sm={6} className="px-1">
+                    <div>Last Name: <strong>Verma</strong></div>
+                  </Col>
+                  <Col size={12} sm={6} className="px-1">
+                    <div>Email Address: <strong>prabuddhaverma2548@gmail.com</strong></div>
+                  </Col>
+                  <Col size={12} sm={6} className="px-1">
+                    <div>Phone No.: <strong>9155512548</strong></div>
+                  </Col>
+                  
                   </Row>
-                </form>
+                  <Row>
+                  <Col size={12} sm={6} className="px-1">
+  <a 
+    href="https://www.canva.com/design/DAF-zSdLr3E/36jy8P2DNrpYcBX9pabTng/view?utm_content=DAF-zSdLr3E&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h40cc7f29f0" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="resume-link"
+  >
+    <strong>Resume</strong>
+  </a>
+</Col>
+
+                  </Row>
               </div>}
             </TrackVisibility>
           </Col>
