@@ -1,6 +1,6 @@
 # Personal Portfolio Website in React
 
-![Portfolio Screenshot](https://drive.google.com/uc?id=1xiij9lVHpzoC-blIL5fPo6vvB8WSkwBY)
+<img src="https://drive.google.com/uc?id=1xiij9lVHpzoC-blIL5fPo6vvB8WSkwBY" alt="Portfolio Screenshot" width="800">
 
 Built using:
 
