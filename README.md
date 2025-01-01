@@ -1,7 +1,6 @@
 # Personal Portfolio Website in React
 
-
-<img width="1266" alt="Screen Shot 2022-06-19 at 2 18 18 PM" src="https://drive.google.com/file/d/1xiij9lVHpzoC-blIL5fPo6vvB8WSkwBY/view?usp=sharing">
+![Portfolio Screenshot](https://drive.google.com/uc?id=1xiij9lVHpzoC-blIL5fPo6vvB8WSkwBY)
 
 Built using:
 
